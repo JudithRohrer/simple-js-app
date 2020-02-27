@@ -1,6 +1,5 @@
-alert('Hello world');
-var favoriteFood = 'Burger';
-document.write (favoriteFood);
-var name = 'Judy';
-var age = '34';
-document.write ('My name is '+name+' and I am '+age+' years old!')
+var PokeRepository = [
+  {name:'Rapidash', height:1.7, types:['fire']},
+  {name:'Pikachu', height:0.4, types:['electric']},
+  {name:'Jigglypuff', height:0.5, types:['fairy','normal']}
+];
