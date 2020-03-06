@@ -32,7 +32,6 @@ font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
-  background-color: var(--secondary-color);
   font-family: 'Nunito Sans',sans-serif;
   font-weight: var(--font-weight-v-light);
   font-size: var(--font-size-v-small);
