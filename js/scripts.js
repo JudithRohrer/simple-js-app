@@ -4,10 +4,11 @@ var pokeRepository = [
   {name:'Jigglypuff', height:0.5, types:['fairy','normal']}
 ];
 
-/* for(var i = 0; i < pokeRepository.length; i++) {
-    document.write ('<p>' + pokeRepository.name + ' (height: ' + pokeRepository.height + ' )</p>')
+for(var i = 0; i < pokeRepository.length; i++) {
+  
     if (i == 0) {
-    document.write ('<p>' + pokeRepository.name + ' (height: ' + pokeRepository.height +' ) - Wow, that\'s big!</p>')
+    document.write ('<p>' + pokeRepository[i].name + ' (height: ' + pokeRepository[i].height +') - Wow, that\'s big!</p>')
+  } else {
+     document.write ('<p>' + pokeRepository[i].name + ' (height: ' + pokeRepository[i].height + ')</p>')
   }
 }
- */
