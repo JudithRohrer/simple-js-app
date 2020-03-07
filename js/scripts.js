@@ -11,3 +11,7 @@ for(var i = 0; i < pokeRepository.length; i++) {
   if (pokeRepository[i].height > 1.0) document.write ('- Wow, that\'s big!');
   document.write ('</p>');
 }
+
+Object.keys(pokeRepository).forEach(function(property) {
+    document.write(pokeRepository[property].name + ' (height: ' + pokeRepository[property].height + ' / types: '+ pokeRepository[property].types + ')<br>');
+});
