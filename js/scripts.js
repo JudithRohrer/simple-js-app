@@ -6,7 +6,9 @@ var pokeRepository = (function (){
   ];
 
   function add(pokemon) {
+    if (typeof pokemon === 'object') {
     repository.push(pokemon);
+    }
   }
 
   function getAll() {
