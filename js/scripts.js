@@ -1,13 +1,13 @@
 var pokeRepository = (function (){
   var repository = [
-  {name:'Rapidash', height:1.7, types:['fire']},
-  {name:'Pikachu', height:0.4, types:['electric']},
-  {name:'Jigglypuff', height:0.5, types:['fairy','normal']}
+    { name:'Rapidash', height:1.7, types:['fire'] },
+    { name:'Pikachu', height:0.4, types:['electric'] },
+    { name:'Jigglypuff', height:0.5, types:['fairy','normal'] }
   ];
 
   function add(pokemon) {
-    if (typeof pokemon === 'object') {
-    repository.push(pokemon);
+    if (typeof pokemon === 'object' && Object.keys(pokemon).includes('name') && Object.keys(pokemon).includes('height') && Object.keys(pokemon).includes('types')) {
+      repository.push(pokemon);
     }
   }
 
