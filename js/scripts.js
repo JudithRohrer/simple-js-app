@@ -15,14 +15,24 @@ var pokeRepository = (function (){
     return repository;
   }
 
+  function addListItem(pokemon) {
+    var button = document.createElement('button');
+    button.innerText = pokemon.name;
+    var listItem = document.createElement('li');
+    listItem.appendChild(button);
+    $newVariable.appendChild(listItem);
+    button.classList.add('pokeButton');
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
+var $newVariable = document.querySelector('.pokemon-list');
+
 pokeRepository.getAll().forEach(function(arrayItem) {
-  document.write ('<p>' + arrayItem.name + ' (height: ' + arrayItem.height + ')');
-  if (arrayItem.height > 1.0) document.write (' - Wow, that\'s big!');
-  document.write ('</p>');
+  pokeRepository.addListItem(arrayItem);
 });
