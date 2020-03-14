@@ -22,12 +22,18 @@ var pokeRepository = (function (){
     listItem.appendChild(button);
     $newVariable.appendChild(listItem);
     button.classList.add('pokeButton');
+    button.addEventListener('click', showDetails(pokemon));
+  }
+
+  function showDetails(pokemon) {
+   console.log(pokemon);
   }
 
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 

@@ -70,7 +70,8 @@ a:active {
   color: var(--green);
 }
 ul {
-  margin-top: 50px;
+  width: 250px;
+  margin-top: 0px auto;
 }
 
 #logo__header {
@@ -103,5 +104,5 @@ ul {
   border-color: #dcdcdc;
   border-width: 2px;
   display: block;
-  align-items: center;
+  margin: 0 auto;
 }
