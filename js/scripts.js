@@ -5,6 +5,7 @@ var pokeRepository = (function (){
     { name:'Jigglypuff', height:0.5, types:['fairy','normal'] }
   ];
 
+  //ensures correct data input of repository
   function add(pokemon) {
     if (typeof pokemon === 'object' && Object.keys(pokemon).includes('name') && Object.keys(pokemon).includes('height') && Object.keys(pokemon).includes('types')) {
       repository.push(pokemon);
@@ -15,6 +16,7 @@ var pokeRepository = (function (){
     return repository;
   }
 
+  //creates a button for every pokemon added to the repository
   function addListItem(pokemon) {
     var button = document.createElement('button');
     button.innerText = pokemon.name;
@@ -22,7 +24,10 @@ var pokeRepository = (function (){
     listItem.appendChild(button);
     $newVariable.appendChild(listItem);
     button.classList.add('pokeButton');
-    button.addEventListener('click', showDetails(pokemon));
+    //shows pokemon details in the console, when pokemon is clicked
+    button.addEventListener('click', function(event){
+      showDetails(pokemon);
+    });
   }
 
   function showDetails(pokemon) {
