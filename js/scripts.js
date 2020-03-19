@@ -1,6 +1,7 @@
 var pokeRepository = (function (){
   var repository = [];
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  var $pokemonList = document.querySelector('.pokemon-list');
 
   //ensures correct data input of repository
   function add(pokemon) {
@@ -17,7 +18,7 @@ var pokeRepository = (function (){
     button.innerText = pokemon.name;
     var listItem = document.createElement('li');
     listItem.appendChild(button);
-    $newVariable.appendChild(listItem);
+    $pokemonList.appendChild(listItem);
     button.classList.add('pokeButton');
     //shows pokemon details in the console, when pokemon is clicked
     button.addEventListener('click', function(event){
@@ -26,11 +27,15 @@ var pokeRepository = (function (){
   }
 
   function showDetails(item) {
-   pokeRepository.loadDetails(item).then(function (){
-     console.log(item);});
+   loadDetails(item).then(function (){
+     console.log(item);
+     item.types.forEach(function (currentType) {
+      console.log(currentType.type.name);
+     })
+    });
   }
 
-  function loadList(item) {
+  function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -54,7 +59,7 @@ var pokeRepository = (function (){
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = Object.keys(details.types);
+      item.types = details.types;
       item.abilities = details.abilities;
     }).catch(function (e) {
       console.error(e);
@@ -71,7 +76,6 @@ var pokeRepository = (function (){
   };
 })();
 
-var $newVariable = document.querySelector('.pokemon-list');
 
 pokeRepository.loadList().then(function() {
   // Now the data is loaded!
