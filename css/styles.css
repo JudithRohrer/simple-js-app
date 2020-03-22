@@ -14,19 +14,15 @@ font-family: 'Nunito Sans', sans-serif;
   --secondary-color: #DCDCDC;
   --dark-grey: #2b2b2b;
   --green: #499948;
+  --white: #fff;
   --text-color: #000;
-  --lightgrey: #D3D3D3;
-  --sun-yellow: #fad900;
-  --egg-yellow: #faf09e;
-  --beige: #FBFCFD;
   --button-shadow: rgba(0, 0, 0, 0.3);
+  --modal-shadow: rgba(0, 0, 0, 0.5);
   --font-weight-v-light: 300;
-  --font-weight-light: 500;
   --font-weight-bold: 600;
   --font-weight-v-bold: 700;
   --font-size-v-small: 16px;
   --font-size-small: 18px;
-  --font-size-medium: 22px;
   --font-size-large: 24px;
   --font-size-v-large: 30px;
 }
@@ -99,7 +95,7 @@ ul {
 .pokemon-list {
   width: 250px;
   list-style-type: none;
-  background-color: white;
+  background-color: var(--white);
   border-style: solid;
   border-color: #dcdcdc;
   border-width: 2px;
@@ -120,7 +116,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--modal-shadow);
 
   /* to show it above other content */
   z-index: 999;
@@ -135,14 +131,12 @@ ul {
 
 .modal {
   margin: auto;
-  display: inline-block;
   box-sizing: border-box;
   border-radius: 4px;
-  background: #fff;
+  background: var(--white);
   padding: 15px;
   width: 100%;
   max-width: 500px;
-  text-align: center;
 }
 
 .modal-close {
@@ -150,7 +144,7 @@ ul {
   -webkit-appearance: none;
   border: 0;
   background: none;
-  color: #777;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 

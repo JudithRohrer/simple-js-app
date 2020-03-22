@@ -40,10 +40,7 @@ var pokeRepository = (function (){
       json.results.forEach(function (item) {
         var pokemon = {
           name: item.name,
-          detailsUrl: item.url,
-          imageUrl: item.img,
-          types: item.types,
-          abilities: item.abilities
+          detailsUrl: item.url
         };
         add(pokemon);
       });
@@ -61,11 +58,11 @@ var pokeRepository = (function (){
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types.map(function(pokemon) {
-      return pokemon.type.name;
-      });
+        return pokemon.type.name;
+        });
       item.abilities = details.abilities.map(function(pokemon) {
-      return pokemon.ability.name;
-      });
+        return pokemon.ability.name;
+        });
 
 
     }).catch(function (e) {
@@ -114,8 +111,7 @@ var pokeRepository = (function (){
   }
 
   function hideModal() {
-  var $modalContainer = document.querySelector('#modal-container');
-  $modalContainer.classList.remove('is-visible');
+    $modalContainer.classList.remove('is-visible');
   }
   //to hide modal when user press esc in keyboard
   window.addEventListener('keydown', (e) => {
