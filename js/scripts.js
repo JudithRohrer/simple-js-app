@@ -59,10 +59,10 @@ var pokeRepository = (function (){
       item.height = details.height;
       item.types = details.types.map(function(pokemon) {
         return pokemon.type.name;
-        });
+      });
       item.abilities = details.abilities.map(function(pokemon) {
         return pokemon.ability.name;
-        });
+      });
 
 
     }).catch(function (e) {
