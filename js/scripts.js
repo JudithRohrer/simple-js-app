@@ -32,7 +32,7 @@ var pokeRepository = (function (){
      showModal(item);
     });
   }
-
+  //fetches details of pokemon
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
